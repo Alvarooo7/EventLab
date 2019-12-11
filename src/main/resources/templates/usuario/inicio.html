@@ -139,6 +139,7 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
+							<th scope="col">Usuario</th>
 							<th scope="col">Nombre</th>
 							<th scope="col">Servicio</th>
 							<th scope="col">Monto</th>
@@ -148,6 +149,7 @@
 					<tbody th:if="${eventosAll}" th:each="evento : ${eventosAll}">
 						<tr>
 							<th scope="row" th:text="${evento.eventoId}"></th>
+							<td th:text="${evento.usuario.username}">Mark</td>
 							<td th:text="${evento.nombre}">Mark</td>
 							<td th:text="${evento.servicio.servicioNombre}">@mdo</td>
 							<td th:text="${evento.servicio.monto}">@mdo</td>
@@ -164,7 +166,7 @@
 					</tbody>
 					<tbody th:if="!${eventosAll}">
 						<tr>
-							<td colspan="5">No hay eventos nuevos </td>
+							<td colspan="6">No hay eventos nuevos </td>
 						</tr>
 					</tbody>
 				</table>
